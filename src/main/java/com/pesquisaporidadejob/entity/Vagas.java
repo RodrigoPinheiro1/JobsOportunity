@@ -1,5 +1,6 @@
 package com.pesquisaporidadejob.entity;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import lombok.AllArgsConstructor;
 import lombok.Data;
 import lombok.NoArgsConstructor;
@@ -25,7 +26,8 @@ public class Vagas {
 
     private LocalDate dtAberturaVaga;
 
-    @OneToMany
+    @JsonIgnore
+    @OneToMany(cascade = CascadeType.ALL)
     private List<Candidatos> candidatos;
 
 
